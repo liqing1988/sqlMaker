@@ -97,6 +97,14 @@ public class ConvertExcel {
 	}
 	
 	/*
+	 * 导出sql
+	 * inFilePath： 预处理后的excel文件路径
+	 */
+	public void exportSQLFile(String inFilePath){
+		
+	}
+	
+	/*
 	 * 转换内容，导出excel
 	 * inFilePath: 源文件路径
 	 * params：替换参数，使用不确定参数列表，可以在执行时手动添加。Integer表示字段列号， Map<String, String>表示参数值及显示名称
