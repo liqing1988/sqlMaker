@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="poi-ooxml-3.7-20101029.jar"/>
 	<classpathentry kind="lib" path="poi-ooxml-schemas-3.7-20101029.jar"/>
 	<classpathentry kind="lib" path="poi-scratchpad-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="infotop-core-1.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
