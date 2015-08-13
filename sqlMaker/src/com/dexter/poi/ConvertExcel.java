@@ -119,7 +119,84 @@ public class ConvertExcel {
 	 * inFilePath： 预处理后的excel文件路径
 	 */
 	public void exportSQLFile(String inFilePath){
+		String familyHeader4 = "use communityservicesys;\n"
+				+ "insert into cs_baseinfo_family (`uuid`,`grid_code`,`code`,`house_holder_name`,`house_holder_num`,`address`,`family_register_type`,`if_single_parent`,`if_lone_old_man`,"
+				+ "`if_subsistence_family`,`subsistence_money`,`subsistence_begindate`,`subsistence_persons`,`if_sw_old_man`,`if_kc_old_man`,`if_disabled_family`,`difficulty_family_type`,`special_care_type`,"
+				+ "`overseas_relations_type`,`income_type`,`if_only_child_family`,`if_exceed_bear_family`,`son_num`,`daughter_num`,`end_area`, `state`, `city`, `area`, `street`, `village`) values ";
+		String houseHeader4 = "use communityservicesys;\n"	
+				+ "insert into cs_baseinfo_house(`uuid`, `code`, `owner`, `contract_num`, `owner_id`, `house_address`, `house_nature`, `property_right`, `structure_type`, `house_type`, "
+				+ "`covered_area`, `usable_area`, `ownership_certificate_num`, `land_use_certificate_num`, `if_have_yard`, `yard_area`, `if_have_storeroom`, "
+				+ "`storeroom_area`, `if_have_temporary_building`, `temporary_building_area`, `precautionary_measure`, `state`, `city`, `area`, `street`, `village`) values ";
+		String inhabitantHeader4 = "use communityservicesys;\n"
+				+ "insert into cs_baseinfo_inhabitant(`uuid`, `code_linshi`, `name`, `country`, `nationality`, `gender`, `accounts_nature`, `contact_num`, " +
+						"`relationship_to_householder`, `certificate_type`, `certificate_num`, `marital_status`, `marriage_date`,`education_degree`," +
+						"`religion_type`,`endowment_insurance_type`,`medical_insurance_type`,`politics_status`,`ifvillagemanager`,`employment_status`," +
+						"`work_unit`,`start_work_date`,`underemployed_reason`,`job_intension`,`voluntary_type`,`if_retirement`,`retirement_date`," +
+						"`domicile_type`,`domicile_place`,`if_resident`,`if_migration`,`flowtime`,`flow_reasons`,`cancel_reasons`,`if_immigration`," +
+						"`immigration_date`,`military_service`,`arm_name`,`if_disabled_person`,`disabled_type`,`disabled_leavel`,`if_sw_old_man`," +
+						"`if_kc_old_man`,`if_sn_old_man`,`religion_manager`,`if_deal_foreign`,`if_problem_teenager`,`if_drug_related_person`," +
+						"`if_upder_control_person`,`if_force_person`,`if_concern_borderland`,`if_severe_mental_illness`,`if_community_correction`," +
+						"`if_llsf_person`,`if_xmsf_person`,`if_custody_person`, `state`, `city`, `area`, `street`, `village`) values ";
+		String[] areas = new String[4];
+		/*areas[0] = "'2ff27e17-8dc5-4447-aecc-6ca565509ed5',";   	//城市
+		areas[1] = "'6c24a747-64c4-4717-8939-cad230e5678e',";		//县区
+		areas[2] = "'3424a7f3-50e2-4503-bd64-beab63d2a2ed',";		//街道
+		areas[3] = "'31d577b7-aba8-49db-a875-c3e7d568f31b',";		//社区
+		//areas[4] = "";      //楼的父节点的前24位
 		
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\簸萁掌村信息.xls", "家庭", "g:\\minzhengjuexcelimport\\簸萁掌村信息0122F.sql", 23, familyHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\簸萁掌村信息.xls", "房产", "g:\\minzhengjuexcelimport\\簸萁掌村信息0122H.sql", 21, houseHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\簸萁掌村信息.xls", "居民", "g:\\minzhengjuexcelimport\\簸萁掌村信息0122I.sql", 54, inhabitantHeader4, areas);
+		
+
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\后湖村信息.xls", "家庭", "g:\\minzhengjuexcelimport\\后湖村信息0122F.sql", 23, familyHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\后湖村信息.xls", "房产", "g:\\minzhengjuexcelimport\\后湖村信息0122H.sql", 21, houseHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\后湖村信息.xls", "居民", "g:\\minzhengjuexcelimport\\后湖村信息0122I.sql", 54, inhabitantHeader4, areas);
+
+
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\前湖村信息.xls", "家庭", "g:\\minzhengjuexcelimport\\前湖村信息0122F.sql", 23, familyHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\前湖村信息.xls", "房产", "g:\\minzhengjuexcelimport\\前湖村信息0122H.sql", 21, houseHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\前湖村信息.xls", "居民", "g:\\minzhengjuexcelimport\\前湖村信息0122I.sql", 54, inhabitantHeader4, areas);
+		
+		
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\泉口村信息.xls", "家庭", "g:\\minzhengjuexcelimport\\泉口村信息0122F.sql", 23, familyHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\泉口村信息.xls", "房产", "g:\\minzhengjuexcelimport\\泉口村信息0122H.sql", 21, houseHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\泉口村信息.xls", "居民", "g:\\minzhengjuexcelimport\\泉口村信息0122I.sql", 54, inhabitantHeader4, areas);
+		
+		
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独西南.xls", "家庭", "g:\\minzhengjuexcelimport\\独西南0124F.sql", 23, familyHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独西南.xls", "房产", "g:\\minzhengjuexcelimport\\独西南0124H.sql", 21, houseHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独西南.xls", "居民", "g:\\minzhengjuexcelimport\\独西南0124I.sql", 54, inhabitantHeader4, areas);
+		
+
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独东北.xls", "家庭", "g:\\minzhengjuexcelimport\\独东北0124F.sql", 23, familyHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独东北.xls", "房产", "g:\\minzhengjuexcelimport\\独东北0124H.sql", 21, houseHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独东北.xls", "居民", "g:\\minzhengjuexcelimport\\独东北0124I.sql", 54, inhabitantHeader4, areas);
+
+
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独东南.xls", "家庭", "g:\\minzhengjuexcelimport\\独东南0124F.sql", 23, familyHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独东南.xls", "房产", "g:\\minzhengjuexcelimport\\独东南0124H.sql", 21, houseHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独东南.xls", "居民", "g:\\minzhengjuexcelimport\\独东南0124I.sql", 54, inhabitantHeader4, areas);
+		
+		
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独西北.xls", "家庭", "g:\\minzhengjuexcelimport\\独西北0124F.sql", 23, familyHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独西北.xls", "房产", "g:\\minzhengjuexcelimport\\独西北0124H.sql", 21, houseHeader4, areas);
+		sqltemplate.createFile("G:\\minzhengjuexcelimport\\独西北.xls", "居民", "g:\\minzhengjuexcelimport\\独西北0124I.sql", 54, inhabitantHeader4, areas);
+	
+		*/
+		areas[0] = "'2ff27e17-8dc5-4447-aecc-6ca565509ed5',";   	//城市
+		areas[1] = "'60c2d520-2579-4ece-9b29-0c42cd698fdd',";		//县区
+		areas[2] = "'cf82ffd4-1ab6-4ea7-be1f-d9d4737a6f1a',";		//街道
+		areas[3] = "'9f8c948a-c924-4d52-a0c1-097ee29dfc8f',";		//社区
+		//areas[4] = "";      //楼的父节点的前24位
+		
+		try {
+			createFile("G:\\minzhengjuexcelimport\\龙家圈20150624.xls", "家庭", "g:\\minzhengjuexcelimport\\龙家圈F.sql", 26, familyHeader4, areas);
+			createFile("G:\\minzhengjuexcelimport\\龙家圈20150624.xls", "房产", "g:\\minzhengjuexcelimport\\龙家圈H.sql", 21, houseHeader4, areas);
+			createFile("G:\\minzhengjuexcelimport\\龙家圈20150624.xls", "居民", "g:\\minzhengjuexcelimport\\龙家圈I.sql", 66, inhabitantHeader4, areas);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/*
@@ -304,6 +381,8 @@ public class ConvertExcel {
 		fr.append(strb);
 		fr.close();
 	}
+	
+	
 	
 	public static void main(String[] args) {
 		ConvertExcel ce = new ConvertExcel();
